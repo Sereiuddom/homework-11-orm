@@ -27,12 +27,12 @@ class Job(Base):
 
 class Assignment(Base):
     __tablename__ = "assignment"
-    ASSIGN_NUM = Column(Integer, primary_key=True)
-    ASSIGN_DATE = Column(Date)
-    ASSIGN_JOB = Column(Integer)
-    ASSIGN_CHG_HR = Column(Float)
-    ASSIGN_HOURS = Column(Float)
-    ASSIGN_CHARGE = Column(Float)
+    assign_num = Column(Integer, primary_key=True)
+    assign_date = Column(Date)
+    assign_job = Column(Float)
+    assign_chg_hr = Column(Float)
+    assign_hours = Column(Float)
+    assign_charge = Column(Float)
 
     
 
