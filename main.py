@@ -44,3 +44,17 @@ Delete employee record
 '''
 Query assigment where assign_date is larger than 2010-01-01
 '''
+# assignments = session.query(Assignment).filter(Assignment.ASSIGN_DATE > "2010-01-01").all() 
+# for assignment in assignments:
+#     print(assignments.ASSIGN_NUM, assignments.ASSIGN_DATE)
+
+connection = engine.connect()
+query = "SELECT * FROM employee WHERE emp_num > :value"
+sql_expression = text(query)
+param = {'value': 101}
+result = connection.execute(sql_expression, param)
+
+for row in result: 
+    print(row[0], row[1])
+
+connection.close()
